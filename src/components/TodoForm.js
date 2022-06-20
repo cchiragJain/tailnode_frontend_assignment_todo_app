@@ -28,7 +28,7 @@ const TodoForm = ({ onSubmit, edit }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className="todo-form">
 			{edit ? (
 				<>
 					<input
@@ -36,8 +36,11 @@ const TodoForm = ({ onSubmit, edit }) => {
 						value={input}
 						onChange={handleChange}
 						ref={inputRef}
+						className="todo-input edit"
 					/>
-					<button onClick={handleSubmit}>Update Task</button>
+					<button onClick={handleSubmit} className="todo-button edit">
+						Update Task
+					</button>
 				</>
 			) : (
 				<>
@@ -46,8 +49,11 @@ const TodoForm = ({ onSubmit, edit }) => {
 						value={input}
 						onChange={handleChange}
 						ref={inputRef}
+						className="todo-input"
 					/>
-					<button onClick={handleSubmit}>Add New Task</button>
+					<button onClick={handleSubmit} className="todo-button">
+						Add New Task
+					</button>
 				</>
 			)}
 		</form>
