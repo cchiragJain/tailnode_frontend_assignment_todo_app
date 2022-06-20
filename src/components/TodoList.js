@@ -24,12 +24,30 @@ const TodoList = () => {
 	const completeTodo = (id) => {
 		// this will run on onClick
 		// if already completed need to give ability to mark it as false as well
-		const updatedTodos = todos.map((todo) => {
+		let updatedTodos = todos.map((todo) => {
 			if (todo.id === id) {
 				todo.isComplete = !todo.isComplete;
 			}
 			return todo;
 		});
+
+		// also need to sort the todos so that completed todos are later in the list
+
+		const completeTodos = todos.filter((todo) => {
+			if (todo.isComplete) {
+				return todo;
+			}
+			return false;
+		});
+
+		const inCompleteTodos = todos.filter((todo) => {
+			if (!todo.isComplete) {
+				return todo;
+			}
+			return false;
+		});
+
+		updatedTodos = [...inCompleteTodos, ...completeTodos];
 
 		setTodos(updatedTodos);
 	};
