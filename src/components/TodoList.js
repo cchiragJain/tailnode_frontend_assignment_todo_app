@@ -41,6 +41,21 @@ const TodoList = () => {
 		setTodos(updatedTodos);
 	};
 
+	// update todo with id and given value
+	const updateTodo = (id, value) => {
+		if (!value.text) {
+			return;
+		}
+
+		// map over the prev todos find one which has the current id and then update its value and return the new udpatedTodos
+
+		const updatedTodos = todos.map((todo) =>
+			todo.id === id ? value : todo
+		);
+
+		setTodos(updatedTodos);
+	};
+
 	return (
 		<div>
 			<h1>What's the plan for Today?</h1>
@@ -49,6 +64,7 @@ const TodoList = () => {
 				todos={todos}
 				completeTodo={completeTodo}
 				removeTodo={removeTodo}
+				updateTodo={updateTodo}
 			/>
 		</div>
 	);
