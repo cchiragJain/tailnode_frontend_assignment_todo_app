@@ -1,7 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-		"Lucida Sans", Arial, sans-serif;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	/* background: linear-gradient(
+		173deg,
+		rgba(123, 118, 252, 1),
+		rgba(186, 22, 38, 0.2)
+	); */
+	background: linear-gradient(
+		77deg,
+		rgba(81, 72, 186, 0.9),
+		rgba(47, 248, 72, 0.4)
+	);
+}
+
+h1 {
+	margin: 32px 0;
+	color: rgb(92, 74, 252, 0.6);
+	font-size: 24px;
+}
+
+.todo-app {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	width: 520px;
+	min-height: 600px;
+	text-align: center;
+	margin: 128px auto;
+	border-radius: 10px;
+	padding-bottom: 32px;
+	/* taken from glass morphism website */
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
 }
