@@ -1,8 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const TodoForm = ({ onSubmit }) => {
 	const [input, setInput] = useState("");
+
+	const inputRef = useRef();
+
+	useEffect(() => {
+		inputRef.current.focus();
+	}, []);
 
 	const handleChange = (e) => {
 		setInput(e.target.value);
@@ -27,6 +33,7 @@ const TodoForm = ({ onSubmit }) => {
 					placeholder="Add a new task"
 					value={input}
 					onChange={handleChange}
+					ref={inputRef}
 				/>
 				<button onClick={handleSubmit}>Add New Task</button>
 			</form>

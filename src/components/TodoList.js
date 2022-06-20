@@ -1,10 +1,12 @@
 import { useState } from "react";
 
 import TodoForm from "./TodoForm";
+import Todo from "./Todo";
 
 const TodoList = () => {
 	const [todos, setTodos] = useState([]);
 
+	// add a new todo
 	const addTodo = (todo) => {
 		// if does not contain any text don't want to add that
 		if (!todo.text) {
@@ -24,6 +26,7 @@ const TodoList = () => {
 		<div>
 			<h1>What's the plan for Today?</h1>
 			<TodoForm onSubmit={addTodo} />
+			<Todo todos={todos} />
 		</div>
 	);
 };
