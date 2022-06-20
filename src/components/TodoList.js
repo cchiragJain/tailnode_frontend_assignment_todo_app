@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { AiFillDelete } from "react-icons/ai";
 
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
@@ -85,7 +86,15 @@ const TodoList = () => {
 
 	return (
 		<div>
-			<h1>What's the plan for Today?</h1>
+			<div className="heading-container">
+				<h1>What's the plan for Today?</h1>
+				<AiFillDelete
+					className="reset-icon"
+					onClick={() => {
+						setTodos([]);
+					}}
+				/>
+			</div>
 			<TodoForm onSubmit={addTodo} />
 			<Todo
 				todos={todos}

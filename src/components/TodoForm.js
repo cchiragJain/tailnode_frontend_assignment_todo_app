@@ -28,35 +28,38 @@ const TodoForm = ({ onSubmit, edit }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="todo-form">
-			{edit ? (
-				<>
-					<input
-						placeholder="Update your task"
-						value={input}
-						onChange={handleChange}
-						ref={inputRef}
-						className="todo-input edit"
-					/>
-					<button onClick={handleSubmit} className="todo-button edit">
-						Update Task
-					</button>
-				</>
-			) : (
-				<>
-					<input
-						placeholder="Add a new task"
-						value={input}
-						onChange={handleChange}
-						ref={inputRef}
-						className="todo-input"
-					/>
-					<button onClick={handleSubmit} className="todo-button">
-						Add New Task
-					</button>
-				</>
-			)}
-		</form>
+			<form onSubmit={handleSubmit} className="todo-form">
+				{edit ? (
+					<>
+						<input
+							placeholder="Update your task"
+							value={input}
+							onChange={handleChange}
+							ref={inputRef}
+							className="todo-input edit"
+						/>
+						<button
+							onClick={handleSubmit}
+							className="todo-button edit"
+						>
+							Update Task
+						</button>
+					</>
+				) : (
+					<>
+						<input
+							placeholder="Add a new task"
+							value={input}
+							onChange={handleChange}
+							ref={inputRef}
+							className="todo-input"
+						/>
+						<button onClick={handleSubmit} className="todo-button">
+							Add New Task
+						</button>
+					</>
+				)}
+			</form>
 	);
 };
 

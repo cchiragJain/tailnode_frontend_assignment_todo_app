@@ -142,3 +142,24 @@ h1 {
 .edit-icon {
 	color: #fff;
 }
+
+.heading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.reset-icon {
+	height: 30px;
+	width: 30px;
+	margin-left: 50px;
+	text-align: center;
+	color: rgb(255, 150, 150);
+	cursor: pointer;
+	transition: ease-in-out 0.5s;
+}
+
+.reset-icon:hover {
+	color: red;
+	transition: ease-in-out 0.5s;
+}
