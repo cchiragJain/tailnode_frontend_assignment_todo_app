@@ -84,7 +84,7 @@ h1 {
 .complete {
 	text-decoration: line-through;
 	opacity: 0.4;
-	transition: ease-in-out 1s;
+	transition: ease-in-out 0.5s;
 }
 
 .todo-row {
@@ -101,7 +101,7 @@ h1 {
 	padding: 16px;
 	border-radius: 5px;
 	width: 90%;
-	transition: ease-in-out 1s;
+	transition: ease-in-out 0.5s;
 }
 
 .todo-row:nth-child(4n + 1) {

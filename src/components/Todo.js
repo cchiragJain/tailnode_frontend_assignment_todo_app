@@ -27,8 +27,9 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 		<div
 			className={todo.isComplete ? "todo-row complete" : "todo-row"}
 			key={todo.id}
+			onClick={() => completeTodo(todo.id)}
 		>
-			<div onClick={() => completeTodo(todo.id)}>{todo.text}</div>
+			<div>{todo.text}</div>
 			<div className="icons">
 				<RiCloseCircleLine
 					onClick={() => removeTodo(todo.id)}
