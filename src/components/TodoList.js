@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useDebugValue, useState } from "react";
 
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
@@ -34,11 +34,22 @@ const TodoList = () => {
 		setTodos(updatedTodos);
 	};
 
+	// remove todo with given id
+	const removeTodo = (id) => {
+		const updatedTodos = todos.filter((todo) => todo.id !== id);
+
+		setTodos(updatedTodos);
+	};
+
 	return (
 		<div>
 			<h1>What's the plan for Today?</h1>
 			<TodoForm onSubmit={addTodo} />
-			<Todo todos={todos} completeTodo={completeTodo} />
+			<Todo
+				todos={todos}
+				completeTodo={completeTodo}
+				removeTodo={removeTodo}
+			/>
 		</div>
 	);
 };
