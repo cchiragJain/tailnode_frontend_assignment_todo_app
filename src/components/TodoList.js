@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
 const TodoList = () => {
-	const [todos, setTodos] = useState([]);
+	const [todos, setTodos] = useState(
+		localStorage.getItem("data")
+			? JSON.parse(localStorage.getItem("data"))
+			: []
+	);
+
+	// on any change in todos update in the local Storage
+	useEffect(() => {
+		localStorage.setItem("data", JSON.stringify(todos));
+	}, [todos]);
 
 	// add a new todo
 	const addTodo = (todo) => {
