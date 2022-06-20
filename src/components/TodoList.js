@@ -18,15 +18,27 @@ const TodoList = () => {
 		const newTodos = [todo, ...todos];
 
 		setTodos(newTodos);
+	};
 
-		console.log(todos);
+	// complete todo
+	const completeTodo = (id) => {
+		// this will run on onClick
+		// if already completed need to give ability to mark it as false as well
+		const updatedTodos = todos.map((todo) => {
+			if (todo.id === id) {
+				todo.isComplete = !todo.isComplete;
+			}
+			return todo;
+		});
+
+		setTodos(updatedTodos);
 	};
 
 	return (
 		<div>
 			<h1>What's the plan for Today?</h1>
 			<TodoForm onSubmit={addTodo} />
-			<Todo todos={todos} />
+			<Todo todos={todos} completeTodo={completeTodo} />
 		</div>
 	);
 };

@@ -20,6 +20,7 @@ const TodoForm = ({ onSubmit }) => {
 		onSubmit({
 			id: uuidv4(),
 			text: input,
+			isComplete: false,
 		});
 
 		// for the new task to be added
