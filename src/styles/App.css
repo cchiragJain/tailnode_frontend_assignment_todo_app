@@ -87,6 +87,11 @@ h1 {
 	transition: ease-in-out 0.5s;
 }
 
+.todo-text {
+	transition: ease-in-out 0.5s;
+	padding-right: 300px;
+}
+
 .todo-row {
 	display: flex;
 	justify-content: space-between;
